@@ -1,7 +1,12 @@
 import pandas as pd
 import numpy as np
-from scipy import stats
+# from scipy import stats
 
+def laplace_noise(epsilon,sensitivity,size):
+    
+    scale = sensitivity / epsilon
+    return np.random.laplace(loc=0, scale=scale)
+    
 
 
 # Load the Adult dataset from the UCI Machine Learning Repository
